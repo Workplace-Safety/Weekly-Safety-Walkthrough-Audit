@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Safety Walkthrough</title>
+
+<!-- PDF export library (only needed for the Download PDF button) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.14.0/html2pdf.bundle.min.js"></script>
+<!-- Real .docx (Word) export library (only needed for the Download Word button) -->
+<script src="https://cdn.jsdelivr.net/npm/html-docx-js@0.3.1/dist/html-docx.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- STICKY TOOLBAR (stays visible while scrolling) -->
+<div class="toolbar">
+    <span class="toolbar-title">Weekly Safety Walkthrough Audit</span>
+    <button class="btn btn-pdf" id="downloadPdfBtn" type="button">⬇ Download PDF</button>
+    <button class="btn btn-word" id="downloadWordBtn" type="button">⬇ Download Word</button>
+    <button class="btn btn-reset" type="reset" form="printable">↺ Reset Form</button>
+</div>
+
+<!-- PRINTABLE / EXPORTABLE FORM -->
+<form id="printable">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Weekly Safety Walkthrough Audit</h1>
+        <div class="header-info">
+            <div class="info-field">
+                <span class="info-label">Site/Project Name:</span>
+                <input type="text" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Week Of:</span>
+                <input type="date" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Auditor Name:</span>
+                <input type="text" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Weather Conditions:</span>
+                <input type="text" class="info-input" />
+            </div>
+        </div>
+    </div>
+
+    <h2>1. General Site Conditions</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">Site access and egress routes clear and safe</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-1" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-1" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-1" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-1" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-1" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Housekeeping adequate (debris removed, materials stacked)</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-2" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-2" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-2" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-2" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-2" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Safety signage posted and visible</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-3" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-3" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-3" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-3" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-3" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">First aid kits accessible and stocked</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-4" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-4" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-4" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-4" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-4" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>2. Fall Protection &amp; Working at Heights</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">Guardrails installed at all open edges 6+ ft</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-5" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-5" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-5" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-5" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-5" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Scaffolds tagged and inspected</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-6" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-6" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-6" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-6" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-6" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Ladders in good condition and properly used</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-7" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-7" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-7" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-7" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-7" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Fall protection equipment inspected and used properly</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-8" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-8" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-8" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-8" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-8" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>3. Excavations &amp; Trenches</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">Excavations protected (sloping, shoring, shielding)</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-9" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-9" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-9" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-9" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-9" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Competent person daily inspections documented</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-10" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-10" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-10" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-10" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-10" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Access/egress provided (ladder within 25 ft)</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-11" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-11" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-11" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-11" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-11" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>4. Electrical Safety</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">GFCI protection in use for all temporary power</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-12" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-12" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-12" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-12" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-12" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Extension cords in good condition</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-13" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-13" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-13" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-13" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-13" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Electrical panels accessible and labeled</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-14" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-14" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-14" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-14" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-14" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>5. Equipment &amp; Tools</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">Heavy equipment pre-use inspections documented</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-15" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-15" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-15" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-15" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-15" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Power tools have guards installed</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-16" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-16" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-16" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-16" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-16" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Defective tools tagged out</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-17" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-17" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-17" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-17" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-17" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>6. PPE &amp; Worker Compliance</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">Hard hats worn in designated areas</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-18" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-18" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-18" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-18" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-18" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Eye protection worn as required</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-19" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-19" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-19" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-19" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-19" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">High-visibility vests worn by all workers</div>
+            <div class="item-controls">
+                <div class="checkbox-container">
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-20" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-20" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                </div>
+                <div class="checkbox-container">
+                    <span class="priority-title">Priority:</span>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-20" value="Low" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-low">Low</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-20" value="Med" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-medium">Med</span></label>
+                    <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="priority-20" value="High" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label priority-chip priority-high">High</span></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CORRECTIVE ACTIONS -->
+    <h2>Corrective Actions Required</h2>
+    <div class="corrective-actions">
+        <table class="action-table">
+            <tr>
+                <th style="width: 26%;">Issue/Hazard</th>
+                <th style="width: 26%;">Corrective Action</th>
+                <th style="width: 18%;">Responsible Person</th>
+                <th style="width: 12%;">Priority</th>
+                <th style="width: 18%;">Target Date</th>
+            </tr>
+            <tr>
+                <td data-label="Issue/Hazard"><input type="text" class="info-input" /></td>
+                <td data-label="Corrective Action"><input type="text" class="info-input" /></td>
+                <td data-label="Responsible Person"><input type="text" class="info-input" /></td>
+                <td data-label="Priority"><select class="info-input"><option value=""></option><option value="Low">Low</option><option value="Medium">Medium</option><option value="High">High</option></select></td>
+                <td data-label="Target Date"><input type="date" class="info-input" /></td>
+            </tr>
+            <tr>
+                <td data-label="Issue/Hazard"><input type="text" class="info-input" /></td>
+                <td data-label="Corrective Action"><input type="text" class="info-input" /></td>
+                <td data-label="Responsible Person"><input type="text" class="info-input" /></td>
+                <td data-label="Priority"><select class="info-input"><option value=""></option><option value="Low">Low</option><option value="Medium">Medium</option><option value="High">High</option></select></td>
+                <td data-label="Target Date"><input type="date" class="info-input" /></td>
+            </tr>
+            <tr>
+                <td data-label="Issue/Hazard"><input type="text" class="info-input" /></td>
+                <td data-label="Corrective Action"><input type="text" class="info-input" /></td>
+                <td data-label="Responsible Person"><input type="text" class="info-input" /></td>
+                <td data-label="Priority"><select class="info-input"><option value=""></option><option value="Low">Low</option><option value="Medium">Medium</option><option value="High">High</option></select></td>
+                <td data-label="Target Date"><input type="date" class="info-input" /></td>
+            </tr>
+            <tr>
+                <td data-label="Issue/Hazard"><input type="text" class="info-input" /></td>
+                <td data-label="Corrective Action"><input type="text" class="info-input" /></td>
+                <td data-label="Responsible Person"><input type="text" class="info-input" /></td>
+                <td data-label="Priority"><select class="info-input"><option value=""></option><option value="Low">Low</option><option value="Medium">Medium</option><option value="High">High</option></select></td>
+                <td data-label="Target Date"><input type="date" class="info-input" /></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- SIGNATURE SECTION -->
+    <div class="signature-section">
+        <div class="signature-box">
+            <span class="signature-label">Safety Auditor Signature:</span>
+            <div class="signature-line"></div>
+            <div class="info-field" style="margin-top: 12pt;">
+                <span class="info-label">Print Name &amp; Title:</span>
+                <input type="text" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Date:</span>
+                <input type="date" class="info-input" />
+            </div>
+        </div>
+        <div class="signature-box">
+            <span class="signature-label">Site Manager/Superintendent Review:</span>
+            <div class="signature-line"></div>
+            <div class="info-field" style="margin-top: 12pt;">
+                <span class="info-label">Print Name:</span>
+                <input type="text" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Date:</span>
+                <input type="date" class="info-input" />
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-grid">
+            <div>Page 1 of 1</div>
+            <div>Weekly Safety Walkthrough Audit</div>
+            <div>Version 1.0 - 2026</div>
+        </div>
+        <div style="margin-top: 8pt; font-size: 7pt;">
+            Comprehensive weekly safety audits help identify trends and prevent incidents. Follow up on all corrective actions and re-audit high-priority items. This form is a continuous improvement tool - use findings to enhance your safety program.
+        </div>
+    </div>
+
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>
